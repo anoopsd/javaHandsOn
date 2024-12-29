@@ -22,6 +22,14 @@ public class MainClass {
         System.out.println(lpaStudent.id());
         printInformation("Hello World");
         printInformation("");
+
+
+        ComputerCase theCase = new ComputerCase("2024","PowerAMPS", "220");
+        Monitor theMonitor = new Monitor("2024","Sony", 27, "1080p");
+        Motherboard theMotherBoard = new Motherboard("2023", "Asus", 4, 1, "V2.4");
+        PersonalComputer theComputer = new PersonalComputer("2024", "Asus", theCase, theMonitor, theMotherBoard);
+        theComputer.powerUp();
+
     }
 
     public static void printInformation(String string) {

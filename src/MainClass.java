@@ -30,6 +30,9 @@ public class MainClass {
         PersonalComputer theComputer = new PersonalComputer("2024", "Asus", theCase, theMonitor, theMotherBoard);
         theComputer.powerUp();
 
+        Movie theMovie = new Adventure("Star Wars");
+        theMovie.watchMovie();
+
     }
 
     public static void printInformation(String string) {

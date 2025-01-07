@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class MainClass {
     public static void main(String[] args) {
         double firstNum = 20.00d;
@@ -33,6 +36,28 @@ public class MainClass {
         Movie theMovie = new Adventure("Star Wars");
         theMovie.watchMovie();
 
+
+        // Arrays
+
+        int[] firstArray = new int[10];
+        firstArray[0] = 5;
+
+        double[] firstArray2 = new double[10];
+        firstArray2[0] = 5.5;
+
+        String[] food = {"idli", "dosa", "sambar"};
+        String formattedArray = Arrays.toString(food);
+        System.out.println(formattedArray);
+        for (String foodItem : food ) {
+            System.out.println(foodItem);
+        }
+        Integer[] randArray = getRandomArray(10);
+        Arrays.sort(randArray);
+        System.out.println(Arrays.toString(randArray));
+
+        int[] orderedArr = {1,2,3,4,5,6,7,8,9};
+        System.out.println(Arrays.toString(orderedArr));
+        reverseArray(orderedArr);
     }
 
     public static void printInformation(String string) {
@@ -43,5 +68,29 @@ public class MainClass {
         int length = string.length();
         System.out.printf("Length: %d %n",length);
         System.out.printf("First Character: %c %n", string.charAt(0));
+    }
+
+    private static Integer[] getRandomArray(int length) {
+        Random rand = new Random();
+        Integer[] array = new Integer[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = rand.nextInt(100);
+        }
+
+        return array;
+    }
+
+    private static void reverseArray(int[] array) {
+        int length = array.length;
+        int first = 0;
+        int last = length - 1;
+        while (first < last) {
+            int temp = array[first];
+            array[first] = array[last];
+            array[last] = temp;
+            first++;
+            last--;
+        }
+        System.out.println(Arrays.toString(array));
     }
 }

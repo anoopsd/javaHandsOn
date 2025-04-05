@@ -13,6 +13,10 @@ public class Main {
         for (Animal animal: animals) {
             doAnimalStuff(animal);
         }
+
+        int[] arr = new int[10];
+        arr[1] = 1;
+        System.out.println(arr[2] += arr[2-1]);
     }
 
     public static void doAnimalStuff(Animal animal) {
